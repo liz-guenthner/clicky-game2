@@ -8,52 +8,47 @@ import pups from "./pups.json";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      pups
-    };
-    this.handleIncrement = this.handleIncrement.bind(this);
-    // this.handleClickEvent = this.handleClickEvent.bind(this);
-    // this.shufflePups = this.shufflePups.bind(this);
-  }; 
   
+  state = { 
+    count : 0,
+    pups
+  }
  // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-
+    this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
     console.log("you clicked a pup");
+  }
 
-    // shufflePups = (pups) => {
-    //   var i = pups.length, j = 0, temp;
-  
-    //   while (i--) {
-    //     j = Math.floor(Math.random() * (i + 1));
-    //     temp = pups[i];
-    //     pups[i] = pups[j];
-    //     pups[j] = temp;
-    //   }
-    //   return pups;
-    // }
-  
-    // handleClickEvent = (pups) => {
+  checkClickedPup = (pups) => {
+    let clickedPupsArray = [];
+    let clickedPup = pups.includes(this.state.pups);
+    if (clickedPup) {
+      console.log('That pup is in the clickedPupsArray...Game over!');
+      // shake Wrapper
+      // clear out clickedPup array
+      // restart game
+      // count goes to 0
+      // send error message
+    } else {
+      console.log('Good job, guess again!');
+      // push pups[key] to clickedPupsArray
+      // increment count by 1
+      // show good message
+      // run shufflePups function
+    }
+    return pups;
+  }
 
-    //   if (this.state.count == 0) {
-    //     pups = this.shufflePups(pups);
-    //     // We always use the setState method to update a component's state
-    //     // this.setState({ count: this.state.count + 1 });
+  shufflePups = (pups) => {
+    for( let i = pups.length -1; i > 0; i-- ) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = pups[i];
+      pups[i] = pups[j];
+      pups[j] = temp;
+    }
+    return pups;
+  }
 
-    //     // console.log("you clicked a pup");
-    //     // console.log("The count is: " + this.state.count);
-    //   }
-    //   console.log(JSON.stringify(pups));
-  
-    // }
-
-  };
-
-  
 
 
   // Map over this.state.friends and render a FriendCard component for each friend object
@@ -66,8 +61,8 @@ class App extends Component {
         {Object.keys(this.state.pups).map(key => (
           <PupCard
             handleIncrement={this.handleIncrement}
-            // shufflePups={this.shufflePups}
-            // handleClickEvent={this.handleClickEvent}
+            shufflePups={this.shufflePups}
+            checkClickedPups={this.checkClickedPups}
             key={key}
             details={this.state.pups[key]}
           />
