@@ -1,12 +1,15 @@
 import React from "react";
 import "./style.css";
 
-function PupCard(props) {
-  return (
-    <div role="img" aria-label="click item" className="click-item">
-      <img alt="puppy pic" src={props.image} onClick={props.handleIncrement}/>
-    </div>
-  );
+class PupCard extends React.Component {
+  render() {
+    const { id, image } = this.props.details;
+    return (
+      <div role="img" aria-label="click item" className="click-item">
+        <img alt="puppy pic" value={id} src={image} onClick={this.props.handleIncrement}/>
+      </div>
+    );
+  }
 }
 
 export default PupCard;

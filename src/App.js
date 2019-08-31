@@ -15,31 +15,43 @@ class App extends Component {
       pups
     };
     this.handleIncrement = this.handleIncrement.bind(this);
+    // this.handleClickEvent = this.handleClickEvent.bind(this);
+    // this.shufflePups = this.shufflePups.bind(this);
   };
   
  // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
-    
-    // this.setState({ pups });
-    // const pups =  {...this.state.pups};
-    // const count =  {...this.state.count};
-    // We always use the setState method to update a component's state
     this.setState({ count: this.state.count + 1 });
 
     console.log("you clicked a pup");
     console.log("The count is: " + this.state.count);
-    
+
+    // shufflePups = (pups) => {
+    //   var i = pups.length, j = 0, temp;
   
-      // const pupsNow = this.state.pups.map(pups => {
-      //   for (let i= (pups.length-1); i>0; i--) {
-      //     const j = Math.floor(Math.random() * pups.length);
-      //     const temp = pupsNow[i];
-      //     pupsNow[i] = pupsNow[j];
-      //     pupsNow[j] = temp;
-      //   };
-      //   this.setState({ pupsNow });
-      // });
- 
+    //   while (i--) {
+    //     j = Math.floor(Math.random() * (i + 1));
+    //     temp = pups[i];
+    //     pups[i] = pups[j];
+    //     pups[j] = temp;
+    //   }
+    //   return pups;
+    // }
+  
+    // handleClickEvent = (pups) => {
+
+    //   if (this.state.count == 0) {
+    //     pups = this.shufflePups(pups);
+    //     // We always use the setState method to update a component's state
+    //     // this.setState({ count: this.state.count + 1 });
+
+    //     // console.log("you clicked a pup");
+    //     // console.log("The count is: " + this.state.count);
+    //   }
+    //   console.log(JSON.stringify(pups));
+  
+    // }
+    
   };
 
   
@@ -52,13 +64,15 @@ class App extends Component {
       <Nav count={this.state.count} />
       <Header />
       <Wrapper>
-        {this.state.pups.map(pup => (
+        {Object.keys(this.state.pups).map(key => (
           <PupCard
             handleIncrement={this.handleIncrement}
-            key={pup.id}
-            image={pup.image}
+            // shufflePups={this.shufflePups}
+            // handleClickEvent={this.handleClickEvent}
+            key={key}
+            details={this.state.pups[key]}
           />
-        ))};
+        ))}
       </Wrapper>
       <Footer />
       </React.Fragment>
