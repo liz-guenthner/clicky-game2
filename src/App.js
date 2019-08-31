@@ -17,14 +17,13 @@ class App extends Component {
     this.handleIncrement = this.handleIncrement.bind(this);
     // this.handleClickEvent = this.handleClickEvent.bind(this);
     // this.shufflePups = this.shufflePups.bind(this);
-  };
+  }; 
   
  // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
     this.setState({ count: this.state.count + 1 });
 
     console.log("you clicked a pup");
-    console.log("The count is: " + this.state.count);
 
     // shufflePups = (pups) => {
     //   var i = pups.length, j = 0, temp;
@@ -51,7 +50,7 @@ class App extends Component {
     //   console.log(JSON.stringify(pups));
   
     // }
-    
+
   };
 
   
