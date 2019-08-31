@@ -1,12 +1,12 @@
 .header {
-    background-color: #2c323c;
-    color: #fff;
+    background-image: url('/images/background.jpg');
     min-height: 300px;
     padding: 120px 20px 50px 20px;
     text-align: center;
     display: block;
 }
 .header h1 {
+    color: #4c3729;
     margin: 0;
     margin-bottom: 30px;
     font-size: 4rem;
@@ -22,6 +22,7 @@ h1 {
 }
 
 h2 {
+    color: #6d4e3a;
     display: block;
     font-size: 1.5em;
     margin-block-start: 0.83em;

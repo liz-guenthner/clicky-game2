@@ -6,7 +6,7 @@ function Footer(props) {
         <footer className="footer">
             <div className="bottom">
                 Clicky Game!
-                <img alt="react logo" src="/images/react.jpg" />
+                <img alt="react logo" src="/images/react.png" />
             </div>
         </footer>
       );

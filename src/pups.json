@@ -1,50 +1,50 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "image": "/images/game1.jpg"
   },
   {
-    "id": 2,
+    "id": 1,
     "image": "/images/game2.jpg"
   },
   {
-    "id": 3,
+    "id": 2,
     "image": "/images/game3.jpg"
   },
   {
-    "id": 4,
+    "id": 3,
     "image": "/images/game4.jpg"
   },
   {
-    "id": 5,
+    "id": 4,
     "image": "/images/game5.jpg"
   },
   {
-    "id": 6,
+    "id": 5,
     "image": "/images/game6.jpg"
   },
   {
-    "id": 7,
+    "id": 6,
     "image": "/images/game7.jpg"
   },
   {
-    "id": 8,
+    "id": 7,
     "image": "/images/game8.jpg"
   },
   {
-    "id": 9,
+    "id": 8,
     "image": "/images/game9.jpg"
   },
   {
-    "id": 10,
+    "id": 19,
     "image": "/images/game10.jpg"
   },
   {
-    "id": 11,
+    "id": 10,
     "image": "/images/game11.jpg"
   },
   {
-    "id": 12,
+    "id": 11,
     "image": "/images/game12.jpg"
   }
 ]
