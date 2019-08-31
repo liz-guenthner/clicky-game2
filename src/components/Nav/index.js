@@ -7,7 +7,7 @@ function Nav(props) {
         <nav className="navbar">
             <ul>
                 <li className="brand">
-                    <a href="/">Clicky Game</a>
+                    <a href="/">Clicky Pup Game</a>
                 </li>
                 <li>Click a pup to begin!</li>
                 <li>Score: {props.count} | Top Score: { props.score }</li>
