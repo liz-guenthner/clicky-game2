@@ -22,3 +22,11 @@ Clicky Pup Game is a memory game build with React. The application's UI is broke
 3. Every time an image is clicked, the images shuffle and render to the page in a random order.
 
 4. Once the user's score is reset after an incorrect guess, the game restarts.
+
+## Issues
+
+1. I can't get the checkClickedPups function to get the id of the clicked pup. I wanted to push that id into an array and or see if it's in the array.
+
+2. If the clicked id is in the array, I wanted this function to send an error message and then restart, empty out new array and set score to 0.
+
+3. If the clicked id is not in the array, add the id to the new array, send success message and increment score.
