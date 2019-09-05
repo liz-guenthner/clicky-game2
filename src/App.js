@@ -11,30 +11,38 @@ class App extends Component {
   
   state = { 
     count : 0,
-    pups
+    pups,
+    message : "Click a pup to begin!"
   }
  // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
+    this.setState({
+      count: this.state.count + 1,
+      pups: this.shufflePups(pups)
+     });
     console.log("you clicked a pup");
   }
 
   checkClickedPup = (pups) => {
     let clickedPupsArray = [];
-    let clickedPup = pups.includes(this.state.pups);
-    if (clickedPup) {
-      console.log('That pup is in the clickedPupsArray...Game over!');
-      // shake Wrapper
-      // clear out clickedPup array
+    let clickedPup = this.state.pups.id;
+
+    if (clickedPupsArray.contains(clickedPup)) {
+      // set message state
+      this.setState({ message: "You guess incorrectly!" });
+      // clear out clickedPupsArray
+      clickedPupsArray = [];
+      // set state of count = 0
+      this.setState({ count : 0 });
       // restart game
-      // count goes to 0
-      // send error message
+      // set route to "/" to home page??
     } else {
-      console.log('Good job, guess again!');
+      // set message state
+      this.setState({ message: "You guessed correctly!" });
+      // increment count and shuffle pups
+      this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
       // push pups[key] to clickedPupsArray
-      // increment count by 1
-      // show good message
-      // run shufflePups function
+      clickedPupsArray.push(clickedPup);
     }
     return pups;
   }
@@ -49,20 +57,21 @@ class App extends Component {
     return pups;
   }
 
-
-
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  // Map over this.state.pups and render a PupCard component for each pup object
   render() {
     return (
       <React.Fragment>
-      <Nav count={this.state.count} />
+      <Nav
+      count={this.state.count}
+      message={this.state.message}
+       />
       <Header />
       <Wrapper>
         {Object.keys(this.state.pups).map(key => (
           <PupCard
             handleIncrement={this.handleIncrement}
             shufflePups={this.shufflePups}
-            checkClickedPups={this.checkClickedPups}
+            checkClickedPups={() => this.checkClickedPups(this.state.pups[key.id].id)}
             key={key}
             details={this.state.pups[key]}
           />
@@ -75,14 +84,3 @@ class App extends Component {
 }
 
 export default App;
-
-// PSUEDO CODE:
-
-// originalArray = [0,1,2,3,4,5,6,7,8,9,10,11];
-// clickedPup = pups[i].id user clicked on
-// clickedArray = push(pups[i])
-
-// check if pups[i] is in clickedArray
-//    yes => shake wrapper div, count: 0, show bad msg, restart game, clear clickedArray
-//    no => score + 1, show good msg, push pups[i] into clickedArray, run shuffleArray(), display
-//    shuffleArray() = orginalArray randomized;
