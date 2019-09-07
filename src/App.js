@@ -12,28 +12,21 @@ class App extends Component {
   state = { 
     count : 0,
     pups,
-    message : "Click a pup to begin!"
+    message : "Click a pup to begin!",
+    checkClickedPups : []
   }
- // handleIncrement increments this.state.count by 1
-  handleIncrement = () => {
-    this.setState({
-      count: this.state.count + 1,
-      pups: this.shufflePups(pups)
-     });
-    console.log("you clicked a pup");
-  }
+ // handleIncrement checks what pup was clicked and increments/shuffles
 
-  checkClickedPup = (pups) => {
-    let clickedPupsArray = [];
-    let clickedPup = this.state.pups.id;
-
-    if (clickedPupsArray.contains(clickedPup)) {
+  checkClickedPups = (id) => {
+    const clickedPupsArray = this.state.pups.id;
+    console.log(this.state.pups.id);
+    console.log(clickedPupsArray);
+    
+    if (clickedPupsArray.includes(id)) {
       // set message state
       this.setState({ message: "You guess incorrectly!" });
-      // clear out clickedPupsArray
-      clickedPupsArray = [];
-      // set state of count = 0
-      this.setState({ count : 0 });
+      // set state of count = 0 and clear array
+      this.setState({ count : 0, clickedPupsArray: [] });
       // restart game
       // set route to "/" to home page??
     } else {
@@ -42,7 +35,7 @@ class App extends Component {
       // increment count and shuffle pups
       this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
       // push pups[key] to clickedPupsArray
-      clickedPupsArray.push(clickedPup);
+      clickedPupsArray.push(id);
     }
     return pups;
   }
@@ -69,9 +62,7 @@ class App extends Component {
       <Wrapper>
         {Object.keys(this.state.pups).map(key => (
           <PupCard
-            handleIncrement={this.handleIncrement}
-            shufflePups={this.shufflePups}
-            checkClickedPups={() => this.checkClickedPups(this.state.pups[key.id].id)}
+            checkClickedPups={() => this.checkClickedPups(this.state.pups[key].id)}
             key={key}
             details={this.state.pups[key]}
           />
