@@ -10,7 +10,7 @@ function Nav(props) {
                     <a href="/">Clicky Pup Game</a>
                 </li>
                 <li>{ props.message }</li>
-                <li>Score: { props.count } | Top Score: { props.score }</li>
+                <li>Count: { props.count } | Score: { props.score }</li>
             </ul>
         </nav>
       );
