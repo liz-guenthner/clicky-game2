@@ -13,14 +13,13 @@ class App extends Component {
     count : 0,
     pups,
     message : "Click a pup to begin!",
-    checkClickedPups : []
+    clickedPupsArray : []
   }
  // handleIncrement checks what pup was clicked and increments/shuffles
 
   checkClickedPups = (id) => {
-    const clickedPupsArray = this.state.pups.id;
-    console.log(this.state.pups.id);
-    console.log(clickedPupsArray);
+    const clickedPupsArray = this.state.clickedPupsArray;
+    const pups = this.state.pups;
     
     if (clickedPupsArray.includes(id)) {
       // set message state
@@ -33,9 +32,8 @@ class App extends Component {
       // set message state
       this.setState({ message: "You guessed correctly!" });
       // increment count and shuffle pups
-      this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
-      // push pups[key] to clickedPupsArray
       clickedPupsArray.push(id);
+      this.setState({ count: this.state.count + 1, pups: this.shufflePups(pups) });
     }
     return pups;
   }
