@@ -1,50 +1,50 @@
 [
   {
     "id": 0,
-    "image": "/images/game00.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game00.jpg"
   },
   {
     "id": 1,
-    "image": "/images/game01.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game01.jpg"
   },
   {
     "id": 2,
-    "image": "/images/game02.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game02.jpg"
   },
   {
     "id": 3,
-    "image": "/images/game03.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game03.jpg"
   },
   {
     "id": 4,
-    "image": "/images/game04.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game04.jpg"
   },
   {
     "id": 5,
-    "image": "/images/game05.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game05.jpg"
   },
   {
     "id": 6,
-    "image": "/images/game06.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game06.jpg"
   },
   {
     "id": 7,
-    "image": "/images/game07.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game07.jpg"
   },
   {
     "id": 8,
-    "image": "/images/game08.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game08.jpg"
   },
   {
     "id": 9,
-    "image": "/images/game09.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game09.jpg"
   },
   {
     "id": 10,
-    "image": "/images/game10.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game10.jpg"
   },
   {
     "id": 11,
-    "image": "/images/game11.jpg"
+    "image": "https://liz-guenthner.github.io/clicky-game2/images/game11.jpg"
   }
 ]
