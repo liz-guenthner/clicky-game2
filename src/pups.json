@@ -1,15 +1,15 @@
 [
   {
     "id": 0,
-    "image": "clicky-game2/images/game00.jpg"
+    "image": "/images/game00.jpg"
   },
   {
     "id": 1,
-    "image": "clicky-game2/images/game01.jpg"
+    "image": "/images/game01.jpg"
   },
   {
     "id": 2,
-    "image": "clicky-game2/images/game02.jpg"
+    "image": "/images/game02.jpg"
   },
   {
     "id": 3,
