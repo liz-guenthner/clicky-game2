@@ -6,7 +6,7 @@ function Footer(props) {
         <footer className="footer">
             <div className="bottom">
                 Clicky Game!
-                <img alt="react logo" src="/clicky-game2/images/react.png" />
+                <img alt="react logo" src="https://liz-guenthner.github.io/clicky-game2/images/react.png" />
             </div>
         </footer>
       );
